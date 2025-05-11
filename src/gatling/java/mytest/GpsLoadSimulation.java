@@ -12,12 +12,13 @@ public class GpsLoadSimulation extends Simulation {
 
     HttpProtocolBuilder httpProtocol = http
             .baseUrl("http://ts.where-car.com") // 서버 주소
-            .contentTypeHeader("application/json");
+            .contentTypeHeader("application/json")
+            .header("Token", "eyJhbGciOiJIUzI1NiJ9.eyJtZG4iOiIwMTIzNDU2Nzg5MCIsImlhdCI6MTc0Njk2NjA0NCwiZXhwIjoxNzQ3MzExNjQ0fQ._LFAqeftDOSxqxba02ebzChnH_hgQNaQG4lr-LI9zV4");
 
     ScenarioBuilder scn = scenario("GPS Load Test")
             .exec(
                     http("Send GPS Logs")
-                            .post("/api/gps")
+                            .post("/api/hub/gps")
                             .body(StringBody(jsonBody))
                             .check(status().is(200))
             );
