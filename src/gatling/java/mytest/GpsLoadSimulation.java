@@ -11,7 +11,7 @@ import java.time.Duration;
 public class GpsLoadSimulation extends Simulation {
 
     HttpProtocolBuilder httpProtocol = http
-            .baseUrl("http://ts.where-car.com:8090") // 서버 주소
+            .baseUrl("http://ts.where-car.com") // 서버 주소
             .contentTypeHeader("application/json");
 
     ScenarioBuilder scn = scenario("GPS Load Test")
@@ -25,7 +25,7 @@ public class GpsLoadSimulation extends Simulation {
     {
         setUp(
                 scn.injectOpen(
-                        constantUsersPerSec(2500).during(Duration.ofSeconds(6))
+                        constantUsersPerSec(2500).during(Duration.ofSeconds(1))
                 )
         ).protocols(httpProtocol);
     }
