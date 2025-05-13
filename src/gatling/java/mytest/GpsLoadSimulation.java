@@ -13,7 +13,7 @@ public class GpsLoadSimulation extends Simulation {
     HttpProtocolBuilder httpProtocol = http
             .baseUrl("http://ts.where-car.com:8080") // 서버 주소
             .contentTypeHeader("application/json")
-            .header("Token", "eyJhbGciOiJIUzI1NiJ9.eyJtZG4iOiIwMTIzNDU2Nzg5MCIsImlhdCI6MTc0NzA5OTM3MCwiZXhwIjoxNzQ3NDQ0OTcwfQ.iDF1BPlQwxNpy5lqFRK-hcBuoqOBnWtrc7XyToSF9Ng");
+            .header("Token", "eyJhbGciOiJIUzI1NiJ9.eyJtZG4iOiIwMTIzNDU2Nzg5MCIsImlhdCI6MTc0Njk2NjA0NCwiZXhwIjoxNzQ3MzExNjQ0fQ._LFAqeftDOSxqxba02ebzChnH_hgQNaQG4lr-LI9zV4");
 
     ScenarioBuilder scn = scenario("GPS Load Test")
             .exec(
